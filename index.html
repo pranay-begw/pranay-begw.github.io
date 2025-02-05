@@ -1,58 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Name - Professional Profile</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranay Begwani - Professional Profile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
+            color: #333;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
-        h1, h2 {
-            color: #333;
+        .experience-item, .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 3px solid #0066cc;
+            background-color: #f8f9fa;
+        }
+        .role {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .company-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .work-details {
+            margin-top: 10px;
+        }
+        .tech-stack {
+            color: #666;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="section">
-            <h1>Your Name</h1>
-            <p>Professional Title</p>
+            <h1>Professional Experience</h1>
+            
+            <div class="experience-item">
+                <div class="company-info">
+                    <span class="role">Software Engineering Intern</span>
+                    <span>Amazon - Bellevue, WA</span>
+                </div>
+                <div class="work-details">
+                    <ul>
+                        <li>Working in Responsible AI to develop a REST API leveraging AWS services to reduce manual resource screening</li>
+                        <li>Supporting Alexa's Voice Deletion Promise, saving 200+ business hours per year on ticketing and triaging</li>
+                        <li>Designed, implemented, tested, and deployed a compliance list scan for efficient policy evaluation of critical findings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-info">
+                    <span class="role">Software Engineering Intern</span>
+                    <span>MessageGears LLC - Atlanta, GA</span>
+                </div>
+                <div class="work-details">
+                    <ul>
+                        <li>Migrated the core product to a React and TailwindCSS stack from Angular JS using the agile methodology</li>
+                        <li>Implemented 10+ components, including a new navbar, a modal, and a wrapper to process API responses</li>
+                        <li>Created 50+ automated tests using React Testing Library and Cypress to ensure robustness of the new navbar</li>
+                        <li>Identified and resolved 20+ bugs in JSP and Angular resulting in fulfilled client requests and better user experience</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-info">
+                    <span class="role">Quantitative Investments Analyst Intern</span>
+                    <span>Georgia Tech Foundation Inc. - Atlanta, GA</span>
+                </div>
+                <div class="work-details">
+                    <ul>
+                        <li>Automated processes for portfolio data analysis using time series analysis, adding 35+ benchmark return based metrics</li>
+                        <li>Refactored, documented, and modularized existing code for improved readability and flow, resulting in a 30% code reduction and 50% faster run times</li>
+                        <li>Conducted hedge fund and public equities due diligence to help diversify the endowment's $2.5Bn portfolio</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
+
         <div class="section">
-            <h2>About Me</h2>
-            <p>Brief professional summary</p>
+            <h1>Projects</h1>
+            
+            <div class="project-item">
+                <h3>Styles.Compare</h3>
+                <div class="tech-stack">OpenAI API, Pinecone, MongoDB, Firebase, React, Web-Scraping</div>
+                <p>Website to find clothing which matches existing clothing styles using similarities in vector embeddings of style descriptions.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Movie Success Predictor</h3>
+                <div class="tech-stack">Python, Pandas, Numpy, Scikit-Learn, Matplotlib, Keras, Tensorflow, BeautifulSoup, NLTK</div>
+                <p>ML model to predict success of a movie based on factors like its script, budget, star cast, and production team.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>School Lab Manager</h3>
+                <div class="tech-stack">Python, SQLite3, Django, HTML, CSS</div>
+                <p>Web app to book equipment based on lab experiments and have the option to book labs. The goal is minimize lost equipment and double booking of rooms.</p>
+            </div>
         </div>
-        
+
         <div class="section">
-            <h2>Experience</h2>
-            <!-- Add your work experience -->
-        </div>
-        
-        <div class="section">
-            <h2>Education</h2>
-            <!-- Add your education details -->
-        </div>
-        
-        <div class="section">
-            <h2>Skills</h2>
-            <!-- Add your key skills -->
-        </div>
-        
-        <div class="section">
-            <h2>Contact</h2>
-            <!-- Add your professional contact information -->
+            <h1>Leadership</h1>
+            
+            <div class="experience-item">
+                <div class="company-info">
+                    <span class="role">Director of Finance</span>
+                    <span>Data Science @ Georgia Tech - Atlanta, GA</span>
+                </div>
+                <div class="work-details">
+                    <p>Actively manage $50000+ for club operations and spearheaded fundraising of $35000+ for a 500+ participant hackathon</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-info">
+                    <span class="role">Senior Analyst</span>
+                    <span>Georgia Tech Student Foundation Investments Committee - Atlanta, GA</span>
+                </div>
+                <div class="work-details">
+                    <p>Oversaw analyst research for Consumer Discretionary stocks, macro & industry trends, and ensured accurate valuation models such as DCF and SOTP, leading to 4 successful pitches in a 200+ member committee, returning 51+% to date</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
