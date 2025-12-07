@@ -162,11 +162,11 @@ function App() {
                 />
               ))}
             </div>
+          </div>
 
           <Education />
         </div>
       </div>
-    </div>
     </ThemeProvider>
   );
 }
