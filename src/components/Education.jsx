@@ -1,5 +1,4 @@
 import React from 'react';
-import ExperienceItem from './ExperienceItem';
 
 const Education = () => {
   const educationData = {
