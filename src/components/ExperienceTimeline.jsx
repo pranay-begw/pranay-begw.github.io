@@ -64,12 +64,17 @@ const ExperienceTimeline = ({ experiences }) => {
                   boxShadow: (theme) => `0 0 10px ${theme.palette.primary.main}40`,
                     width: '60px',
                     height: '60px',
+                    minWidth: '60px',
+                    minHeight: '60px',
+                    maxWidth: '60px',
+                    maxHeight: '60px',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '8px',
                     overflow: 'hidden',
+                    flexShrink: 0,
                     mb: 1
                   }}
                 >
@@ -80,7 +85,8 @@ const ExperienceTimeline = ({ experiences }) => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'contain',
-                      borderRadius: '50%'
+                      borderRadius: '50%',
+                      display: 'block'
                     }}
                   />
                 </Box>
@@ -233,7 +239,7 @@ const ExperienceTimeline = ({ experiences }) => {
                 </Typography>
               </TimelineOppositeContent>
               
-              <TimelineSeparator>
+              <TimelineSeparator sx={{ flexShrink: 0 }}>
                 <TimelineConnector sx={{ bgcolor: 'var(--teal-accent)' }} />
                 <TimelineDot 
                   sx={{ 
@@ -242,12 +248,17 @@ const ExperienceTimeline = ({ experiences }) => {
                     boxShadow: (theme) => `0 0 10px ${theme.palette.primary.main}40`,
                     width: 56,
                     height: 56,
+                    minWidth: 56,
+                    minHeight: 56,
+                    maxWidth: 56,
+                    maxHeight: 56,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '8px',
                     borderRadius: '50%',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    flexShrink: 0
                   }}
                 >
                   <img 
@@ -257,7 +268,8 @@ const ExperienceTimeline = ({ experiences }) => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'contain',
-                      borderRadius: '50%'
+                      borderRadius: '50%',
+                      display: 'block'
                     }}
                   />
                 </TimelineDot>
