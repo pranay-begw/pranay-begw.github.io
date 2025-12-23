@@ -1,379 +1,86 @@
-import React, { useState, useEffect } from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import '../styles/ExperienceTimeline.css';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const ExperienceTimeline = ({ experiences }) => {
-  const [visibleItems, setVisibleItems] = useState([]);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  return (
+    <div className="relative max-w-5xl mx-auto py-10 px-4">
+      {/* Central Line (Desktop) */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-teal-accent/20 hidden md:block" />
 
-  useEffect(() => {
-    // Animate items one by one
-    experiences.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleItems(prev => [...prev, index]);
-      }, index * 300); // 300ms delay between each item
-    });
-  }, [experiences]);
+      {/* Left Line (Mobile) */}
+      <div className="absolute left-6 top-10 h-full w-1 bg-teal-accent/20 md:hidden" />
 
-  // Mobile layout: logos on left, content on right, full width
-  if (isMobile) {
-    return (
-      <Box sx={{ 
-        bgcolor: 'transparent',
-        padding: '20px 0',
-        width: '100%'
-      }}>
+      <div className="space-y-12 md:space-y-24">
         {experiences.map((exp, index) => {
-          const isVisible = visibleItems.includes(index);
-          
+          const isEven = index % 2 === 0;
+
           return (
-            <Box
+            <motion.div
               key={index}
-              sx={{
-                display: 'flex',
-                width: '100%',
-                mb: 3,
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease',
-              }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className={`relative flex flex-col md:flex-row md:items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
             >
-              {/* Logo on the left */}
-              <Box
-                sx={{
-                  flexShrink: 0,
-                  width: '80px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  mr: 2
-                }}
-              >
-                <Box
-                sx={{
-                  bgcolor: 'white',
-                  border: '3px solid var(--teal-accent)',
-                  boxShadow: (theme) => `0 0 10px ${theme.palette.primary.main}40`,
-                    width: '60px',
-                    height: '60px',
-                    minWidth: '60px',
-                    minHeight: '60px',
-                    maxWidth: '60px',
-                    maxHeight: '60px',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '8px',
-                    overflow: 'hidden',
-                    flexShrink: 0,
-                    mb: 1
-                  }}
-                >
-                  <img 
-                    src={exp.logo} 
-                    alt={exp.company} 
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain',
-                      borderRadius: '50%',
-                      display: 'block'
-                    }}
-                  />
-                </Box>
-                {index < experiences.length - 1 && (
-                  <Box
-                    sx={{
-                    width: '2px',
-                    height: '100%',
-                    minHeight: '40px',
-                    bgcolor: 'var(--teal-accent)',
-                      mt: 1
-                    }}
-                  />
-                )}
-              </Box>
-              
-              {/* Content on the right */}
-              <Box
-                sx={{
-                  flex: 1,
-                  bgcolor: '#242424',
-                  padding: '15px',
-                  borderRadius: '8px',
-                  borderLeft: '3px solid var(--teal-accent)',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                  textAlign: 'left',
-                  width: '100%',
-                  '&:hover': {
-                    transform: 'translateX(5px)',
-                    boxShadow: '-5px 5px 10px rgba(0, 179, 179, 0.1)'
-                  }
-                }}
-              >
-                <Typography 
-                  variant="h6" 
-                  component="span" 
-                  sx={{ 
-                    color: 'var(--teal-accent)',
-                    fontWeight: 'bold',
-                    display: 'block',
-                    mb: 1
-                  }}
-                >
-                  {exp.role}
-                </Typography>
-                
-                <Typography 
-                  variant="body2" 
-                  sx={{ 
-                    color: '#b3b3b3',
-                    mb: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 0.5
-                  }}
-                >
-                  <i className="fas fa-map-marker-alt" style={{ color: 'var(--teal-accent)', fontSize: '14px' }}></i>
-                  {exp.company} - {exp.location}
-                </Typography>
+              {/* Mobile Node */}
+              <div className="absolute left-[1.5rem] -translate-x-1/2 flex items-center justify-center md:hidden z-10 w-12 h-12 bg-dark-bg border-2 border-teal-accent rounded-full p-1 shadow-lg">
+                <img
+                  src={exp.logo}
+                  alt={exp.company}
+                  className="w-full h-full object-contain rounded-full bg-white p-0.5"
+                />
+              </div>
 
-                {exp.date && (
-                  <Typography 
-                    variant="body2" 
-                    sx={{ 
-                      color: '#b3b3b3',
-                      mb: 2,
-                      fontSize: '0.85rem'
-                    }}
-                  >
-                    {exp.date}
-                  </Typography>
-                )}
+              {/* Content Card (Left or Right) */}
+              <div className="w-full pl-16 md:pl-0 md:w-5/12 mb-8 md:mb-0 relative">
+                <div
+                  className="bg-zinc-900/40 backdrop-blur-md p-6 rounded-xl border border-zinc-700/50 shadow-lg hover:border-teal-500/30 transition-all duration-300 text-left"
+                >
+                  <h3 className="text-xl font-bold text-teal-accent mb-1">{exp.role}</h3>
+                  <h4 className="text-lg text-zinc-200 mb-2">{exp.company}</h4>
+                  <p className="text-sm text-zinc-400 mb-4">{exp.location} | {exp.date}</p>
 
-                <Box component="div" sx={{ mt: 1.5 }}>
-                  {Array.isArray(exp.details) ? (
-                    <ul style={{ 
-                      listStyle: 'none', 
-                      padding: 0, 
-                      margin: 0 
-                    }}>
-                      {exp.details.map((detail, idx) => (
-                        <li 
-                          key={idx}
-                          style={{
-                            position: 'relative',
-                            paddingLeft: '20px',
-                            marginBottom: '8px',
-                            color: '#ffffff',
-                            lineHeight: '1.6'
-                          }}
-                        >
-                          <span style={{
-                            content: '"•"',
-                            color: 'var(--teal-accent)',
-                            position: 'absolute',
-                            left: 0
-                          }}>•</span>
+                  <ul className="space-y-2 text-zinc-300 text-sm list-none items-start flex flex-col">
+                    {Array.isArray(exp.details) ? (
+                      exp.details.map((detail, idx) => (
+                        <li key={idx} className="relative">
                           {detail}
                         </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <Typography variant="body2" sx={{ color: '#b3b3b3' }}>
-                      {exp.details}
-                    </Typography>
-                  )}
-                </Box>
-              </Box>
-            </Box>
-          );
-        })}
-      </Box>
-    );
-  }
-
-  // Desktop layout: alternating timeline
-  return (
-    <Box sx={{ 
-      bgcolor: 'transparent',
-      padding: '20px 0',
-      '& .MuiTimeline-root': {
-        padding: 0
-      }
-    }}>
-      <Timeline position="alternate">
-        {experiences.map((exp, index) => {
-          const isVisible = visibleItems.includes(index);
-          
-          return (
-            <TimelineItem 
-              key={index}
-              sx={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'opacity 0.6s ease, transform 0.6s ease',
-              }}
-            >
-              <TimelineOppositeContent
-                sx={{ 
-                  m: 'auto 0',
-                  flex: 0.3,
-                  px: 2
-                }}
-                align={index % 2 === 0 ? 'right' : 'left'}
-                variant="body2"
-                color="text.secondary"
-              >
-                <Typography variant="body2" sx={{ color: '#b3b3b3' }}>
-                  {exp.date || exp.period}
-                </Typography>
-              </TimelineOppositeContent>
-              
-              <TimelineSeparator sx={{ flexShrink: 0 }}>
-                <TimelineConnector sx={{ bgcolor: 'var(--teal-accent)' }} />
-                <TimelineDot 
-                  sx={{ 
-                    bgcolor: 'white',
-                    border: '3px solid var(--teal-accent)',
-                    boxShadow: (theme) => `0 0 10px ${theme.palette.primary.main}40`,
-                    width: 56,
-                    height: 56,
-                    minWidth: 56,
-                    minHeight: 56,
-                    maxWidth: 56,
-                    maxHeight: 56,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '8px',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    flexShrink: 0
-                  }}
-                >
-                  <img 
-                    src={exp.logo} 
-                    alt={exp.company} 
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain',
-                      borderRadius: '50%',
-                      display: 'block'
-                    }}
-                  />
-                </TimelineDot>
-                <TimelineConnector sx={{ bgcolor: 'var(--teal-accent)' }} />
-              </TimelineSeparator>
-              
-              <TimelineContent sx={{ py: '12px', px: 2, flex: 0.7 }}>
-                <Box
-                  sx={{
-                    bgcolor: '#242424',
-                    padding: '20px',
-                    borderRadius: '8px',
-                    borderLeft: '3px solid var(--teal-accent)',
-                    transition: 'transform 0.2s, box-shadow 0.2s',
-                    textAlign: 'left',
-                    '&:hover': {
-                      transform: 'translateX(5px)',
-                      boxShadow: '-5px 5px 10px rgba(0, 179, 179, 0.1)'
-                    }
-                  }}
-                >
-                  <Typography 
-                    variant="h6" 
-                    component="span" 
-                    sx={{ 
-                      color: 'var(--teal-accent)',
-                      fontWeight: 'bold',
-                      display: 'block',
-                      mb: 1
-                    }}
-                  >
-                    {exp.role}
-                  </Typography>
-                  
-                  <Typography 
-                    variant="body2" 
-                    sx={{ 
-                      color: '#b3b3b3',
-                      mb: 1,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 0.5
-                    }}
-                  >
-                    <i className="fas fa-map-marker-alt" style={{ color: 'var(--teal-accent)', fontSize: '14px' }}></i>
-                    {exp.company} - {exp.location}
-                  </Typography>
-
-                  {exp.date && (
-                    <Typography 
-                      variant="body2" 
-                      sx={{ 
-                        color: '#b3b3b3',
-                        mb: 2,
-                        fontSize: '0.85rem'
-                      }}
-                    >
-                      {exp.date}
-                    </Typography>
-                  )}
-
-                  <Box component="div" sx={{ mt: 1.5 }}>
-                    {Array.isArray(exp.details) ? (
-                      <ul style={{ 
-                        listStyle: 'none', 
-                        padding: 0, 
-                        margin: 0 
-                      }}>
-                        {exp.details.map((detail, idx) => (
-                          <li 
-                            key={idx}
-                            style={{
-                              position: 'relative',
-                              paddingLeft: '20px',
-                              marginBottom: '8px',
-                              color: '#ffffff',
-                              lineHeight: '1.6'
-                            }}
-                          >
-                            <span style={{
-                              content: '"•"',
-                              color: 'var(--teal-accent)',
-                              position: 'absolute',
-                              left: 0
-                            }}>•</span>
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
+                      ))
                     ) : (
-                      <Typography variant="body2" sx={{ color: '#b3b3b3' }}>
-                        {exp.details}
-                      </Typography>
+                      <li>{exp.details}</li>
                     )}
-                  </Box>
-                </Box>
-              </TimelineContent>
-            </TimelineItem>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Center Logo Node (Desktop Only) */}
+              <div className="w-full md:w-2/12 hidden md:flex justify-center items-center my-4 md:my-0 relative z-10">
+                <div className="relative">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-teal-accent/20 rounded-full blur-md" />
+
+                  <div className="relative w-20 h-20 bg-dark-bg border-4 border-teal-accent rounded-full flex items-center justify-center p-2 shadow-xl hover:scale-110 transition-transform duration-300">
+                    <img
+                      src={exp.logo}
+                      alt={exp.company}
+                      className="w-full h-full object-contain rounded-full bg-white p-1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Empty Space for the other side */}
+              <div className="w-full md:w-5/12 hidden md:block" />
+            </motion.div>
           );
         })}
-      </Timeline>
-    </Box>
+      </div>
+    </div>
   );
 };
 
 export default ExperienceTimeline;
+
 
