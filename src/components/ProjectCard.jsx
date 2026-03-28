@@ -59,7 +59,7 @@ export default function ProjectCard({ title, description, techStack, features, l
             className="flex items-center gap-2 text-teal-400 hover:text-teal-300 font-medium transition text-sm"
           >
             <ExternalLink className="w-4 h-4" />
-            Live Demo
+            View
           </a>
         )}
         {githubUrl && (
