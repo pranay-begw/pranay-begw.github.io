@@ -78,6 +78,20 @@ export const projects = [
         liveUrl: "https://devpost.com/software/smartframe",
         githubUrl: "https://github.com/yatharth-b/buzzcut",
     },
+    {                                                                                                                                                     
+        title: 'Agentic Hedge Fund',                                                                                                                      
+        image: '',                                                                                               
+        techStack: ['Python', 'LangGraph', 'LLM', 'Alpaca', 'Streamlit', 'PostgreSQL', 'Pydantic'],
+        description: 'Autonomous multi-agent trading system that analyzes stocks via specialized LLM-powered agents and executes trades through Alpaca\'s paper trading API using a "Core vs. Satellite" portfolio strategy.',
+        features: [                                                                                                                                       
+            'Orchestrated a multi-agent LangGraph pipeline with parallel LLM analysts (Valuation, Sentiment, Risk) and a weighted Portfolio Manager that aggregates signals into trade decisions',                                                                                                             
+            'Implemented a RiskGuardian veto mechanism that overrides any BUY signal based on volatility, beta, and drawdown thresholds to enforce downside protection',
+            'Integrated yfinance for real-time fundamentals, price history, and news ingestion, and Alpaca paper trading API for order execution',
+            'Built an interactive Streamlit dashboard for live analysis, signal visualization, and dry-run/live trading mode toggling',
+        ],                                                                                                                                                
+        liveUrl: null,                                                                                                                
+        githubUrl: 'https://github.com/pranay-begw/agentic-idg',                                                                                                            
+    },
     {
         title: 'GT Course Catalog - Buzz AI',
         image: '',
@@ -103,6 +117,19 @@ export const projects = [
             'Handles overlapping notes and variable timing in complex compositions'
         ],
         liveUrl: 'https://drive.google.com/file/d/15FgGlfbnQkeNpdkANl7azukX7MSZr-5N/view?usp=sharing',
+        githubUrl: null,
+    },
+    {
+        title: 'pranaybegwani.com',
+        image: '',
+        techStack: ['Python', 'SQLite3', 'Django', 'HTML', 'CSS'],
+        description: 'Personal website to showcase projects and skills.',
+        features: [
+            'Responsive design for all devices',
+            'Interactive elements and smooth animations',
+            'Clean and modern UI/UX design'
+        ],
+        liveUrl: 'https://pranaybegwani.com',
         githubUrl: null,
     },
     {
@@ -143,18 +170,5 @@ export const projects = [
         ],
         liveUrl: null,
         githubUrl: "https://github.com/pranay-begw/Pates_Lab_Manager/blob/main/Pranay%20Begwani%20Lab%20Manager%20Document.pdf",
-    },
-    {
-        title: 'pranaybegwani.com',
-        image: '',
-        techStack: ['Python', 'SQLite3', 'Django', 'HTML', 'CSS'],
-        description: 'Personal website to showcase projects and skills.',
-        features: [
-            'Responsive design for all devices',
-            'Interactive elements and smooth animations',
-            'Clean and modern UI/UX design'
-        ],
-        liveUrl: 'https://pranaybegwani.com',
-        githubUrl: null,
     }
 ];
