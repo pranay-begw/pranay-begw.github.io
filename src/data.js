@@ -6,7 +6,9 @@ export const experiences = [
         location: 'Bellevue, WA',
         date: 'Present',
         details: [
-            'Working in AGI Infra to support AGI Content Registry for compliant and responsible model training'
+            'Working in AGI Infra within the Content Registry team, to improve data compliance, reliability, and governance',
+            'Led the deprecation of a legacy DataZone service, migrating 20k+ records to a new DynamoDB based ECS Fargate service',
+            'Contribute to UX improvements for data manifests, subscriptions, auditing, and preferences experiences'
         ]
     },
     {
@@ -51,17 +53,30 @@ export const experiences = [
 export const leadership = [
     {
         logo: '/dsgt.png',
-        role: 'Director of Finance',
+        role: 'Director Finance & Logistics Lead',
         company: 'Data Science @ Georgia Tech',
+        date: 'Oct 2021 - Aug 2023',
         location: 'Atlanta, GA',
-        details: 'Actively manage $50000+ for club operations and spearheaded fundraising of $35000+ for a 500+ participant hackathon'
+        details: '',
+        bullets: [
+            'Led the Logistics team to organize a hybrid "datathon" with 500+ participants',
+            'Actively manage $50000+ of funds for the club\'s budgeting and organizing events',
+            'Collaborated in fundraising $20000+ in the form of awards, sponsorships, and credits to use in club operations and events'
+        ]
     },
     {
         logo: '/gtsf.png',
-        role: 'Senior Analyst',
+        role: 'Senior Analyst | Consumer Discretionary Sector',
         company: 'Georgia Tech Student Foundation Investments Committee',
+        date: 'Sep 2021 - May 2023',
         location: 'Atlanta, GA',
-        details: 'Oversaw analyst research for Consumer Discretionary stocks, macro & industry trends, and ensured accurate valuation models such as DCF and SOTP, leading to 4 successful pitches in a 200+ member committee, returning 51+% to date'
+        details: '',
+        bullets: [
+            'Oversaw analyst research for Consumer Discretionary stocks, macro & industry trends, and ensured accurate valuation models such as DCF and SOTP, leading to 4 successful pitches in a 200+ member committee',
+            'Re-evaluated to hold the committee\'s largest holding — Amazon (est. 1.5% of the portfolio)',
+            'Conducted equity research for Consumer Discretionary stocks through Bloomberg Terminal by analyzing 10-Ks/10-Qs/8-Ks and macro & industry trends',
+            'Completed the mentorship, learning the fundamental concepts of value investing, bond pricing, DCF, and SOTP'
+        ]
     }
 ];
 

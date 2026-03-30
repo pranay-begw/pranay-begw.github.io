@@ -28,7 +28,7 @@ const Education = () => {
       transition={{ duration: 0.5 }}
       className="mb-20"
     >
-      <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-700/50 rounded-2xl p-8 hover:border-teal-500/30 transition-colors duration-300">
+      <div className="bg-zinc-900/40 backdrop-blur-md border border-zinc-700/50 rounded-2xl p-8">
         <div className="flex flex-col md:flex-row gap-8 items-start">
 
           {/* Logo Section */}
@@ -56,7 +56,7 @@ const Education = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {educationData.degrees.map((item, index) => (
-                <div key={index} className="flex items-start p-4 rounded-xl bg-zinc-800/30 border border-zinc-700/30 hover:bg-zinc-800/50 transition-colors">
+                <div key={index} className="flex items-start p-4 rounded-xl bg-zinc-800/30 border border-zinc-700/30">
                   <GraduationCap className="w-5 h-5 text-teal-400 mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-zinc-200">{item.degree}</h3>
