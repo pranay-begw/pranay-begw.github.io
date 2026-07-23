@@ -7,7 +7,7 @@ export const experiences = [
         date: 'Present',
         details: [
             'Working in AGI Infra within the Content Registry team, to improve data compliance, reliability, and governance',
-            'Led the deprecation of a legacy DataZone service, migrating 20k+ records to a new DynamoDB based ECS Fargate service',
+            'Led the deprecation of a legacy DataZone service, migrating 30k+ records to a new DynamoDB based ECS Fargate service',
             'Contribute to UX improvements for data manifests, subscriptions, auditing, and preferences experiences'
         ]
     },
@@ -24,6 +24,18 @@ export const experiences = [
         ]
     },
     {
+        logo: '/gtf.jpeg',
+        role: 'Quantitative Investments Analyst Intern',
+        company: 'Georgia Tech Foundation Inc.',
+        location: 'Atlanta, GA',
+        date: 'Jan 2023 - May 2024',
+        details: [
+            'Automated processes for portfolio data analysis using time series analysis, adding 35+ benchmark return based metrics',
+            'Refactored, documented, and modularized existing code for improved readability and flow, resulting in a 30% code reduction and 50% faster run times',
+            'Conducted hedge fund and public equities due diligence to help diversify the endowment\'s $2.6Bn portfolio'
+        ]
+    },
+    {
         logo: '/messagegears.jpeg',
         role: 'Software Engineering Intern',
         company: 'MessageGears LLC',
@@ -31,21 +43,9 @@ export const experiences = [
         date: 'Summer 2023',
         details: [
             'Migrated the core product to a React and TailwindCSS stack from Angular JS using the agile methodology',
-            'Implemented 10+ components, including a new navbar, a modal, and a wrapper to process API responses',
+            'Shipped 25+ components, including a new navbar, a modal, and a wrapper to process API responses',
             'Created 50+ automated tests using React Testing Library and Cypress to ensure robustness of the new navbar',
-            'Identified and resolved 20+ bugs in JSP and Angular resulting in fulfilled client requests and better user experience'
-        ]
-    },
-    {
-        logo: '/gtf.jpeg',
-        role: 'Quantitative Investments Analyst Intern',
-        company: 'Georgia Tech Foundation Inc.',
-        location: 'Atlanta, GA',
-        date: 'Summer 2022',
-        details: [
-            'Automated processes for portfolio data analysis using time series analysis, adding 35+ benchmark return based metrics',
-            'Refactored, documented, and modularized existing code for improved readability and flow, resulting in a 30% code reduction and 50% faster run times',
-            'Conducted hedge fund and public equities due diligence to help diversify the endowment\'s $2.5Bn portfolio'
+            'Identified and resolved 10+ bugs in JSP and Angular resulting in fulfilled client requests and better user experience'
         ]
     }
 ];
