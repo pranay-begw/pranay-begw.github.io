@@ -3,8 +3,8 @@ export const experiences = [
         logo: '/annapurna.png',
         role: 'Software Engineer',
         company: 'Annapurna Labs',
-        location: 'Bellevue, WA',
-        date: 'Present',
+        location: 'Seattle, WA',
+        date: 'Aug 2026 - Present',
         details: [
             'Architecting and building a centralized capacity ledger across AWS accounts and EKS clusters to track Trainium, GPU, and CPU resources, enable self-service capacity vending, automatically reclaim expired allocations, and onboard new compute capacity.',
             'Integrated health checks across workloads running on compute instances, accelerating healthy-instance discovery and improving placement of Neuron SDK development and CI/CD testing workloads.',
@@ -16,7 +16,7 @@ export const experiences = [
         role: 'Software Engineer',
         company: 'Amazon',
         location: 'Bellevue, WA',
-        date: 'Present',
+        date: 'Sep 2025 - Jul 2026',
         details: [
             'Working in AGI Infra within the Content Registry team, to improve data compliance, reliability, and governance',
             'Led the deprecation of a legacy DataZone service, migrating 30k+ records to a new DynamoDB based ECS Fargate service',
