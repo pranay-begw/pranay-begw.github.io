@@ -1,5 +1,17 @@
 export const experiences = [
     {
+        logo: '/annapurna.png',
+        role: 'Software Engineer',
+        company: 'Annapurna Labs',
+        location: 'Bellevue, WA',
+        date: 'Present',
+        details: [
+            'Architecting and building a centralized capacity ledger across AWS accounts and EKS clusters to track Trainium, GPU, and CPU resources, enable self-service capacity vending, automatically reclaim expired allocations, and onboard new compute capacity.',
+            'Integrated health checks across workloads running on compute instances, accelerating healthy-instance discovery and improving placement of Neuron SDK development and CI/CD testing workloads.',
+            'Developed and maintained distributed Kubernetes infrastructure across multiple Amazon EKS clusters, using Kueue for compute orchestration and workload scheduling to support a platform powering 80% of Neuron code deployments.'
+        ]
+    },
+    {
         logo: '/amazon.png',
         role: 'Software Engineer',
         company: 'Amazon',
